@@ -1,0 +1,81 @@
+body {
+    font-family: Poppins, sans-serif;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    transition: background-image 0.3s ease-in-out;
+    background-image: url('https://i.postimg.cc/7YCFGNkh/image.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Fondo fijo */
+    background-size: 100% 100%; /* Cubrir toda la ventana gráfica */
+}
+
+h1, h2 {
+    font-family: Poppins, sans-serif;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+#logo {
+    display: block;
+    margin: 30px auto;
+    width: 150px;
+    height: auto;
+}
+
+#inicio-sesion {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 16px;
+    margin: 20px auto;
+    width: 300px;
+}
+
+button {
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+button.mostrar-contrasena {
+    background-color: #007BFF; /* Cambio a color azul */
+}
+
+button.iniciar-sesion {
+    background-color: #28a745; /* Cambio a color verde */
+}
+
+button:hover {
+    opacity: 0.8; /* Reducción de opacidad al pasar el mouse */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+select {
+    width: 95%;
+    padding: 10px;
+    margin: 5px auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.salir {
+    background-color: #dc3545; /* Rojo */
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 14px; /* Tamaño de letra reducido */
+}
+
+.salir:hover {
+    background-color: #c82333; /* Rojo más oscuro al pasar el mouse */
+}

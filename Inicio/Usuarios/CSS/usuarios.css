@@ -1,0 +1,616 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    color: #000000;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://images.unsplash.com/photo-1533638978312-8a4eaa2fbeaf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGlicm9zJTIwYXp1bGVzfGVufDB8fDB8fHww&w=1000&q=80');
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Fondo fijo */
+    background-size: 100% 100%; /* Cubrir toda la ventana gráfica */
+    transition: background-size 0.3s ease-in-out; /* Transición suave de tamaño de fondo */
+}
+
+.nav {
+    width: 300px;
+}
+
+.nav__link {
+    color: #000000;
+    display: block;
+    padding: 15px 0;
+    text-decoration: none;
+}
+
+.nav__link--inside {
+    border-radius: 6px;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.nav__link--inside:hover {
+    background: #499bec;
+}
+
+.list {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 0 16px 16px 0;
+    background: #fff;
+}
+
+.list__item {
+    list-style: none;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.list__item--click {
+    cursor: pointer;
+}
+
+.list__button {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.arrow .list__arrow {
+    transform: rotate(90deg);
+}
+
+.list__arrow {
+    margin-left: auto;
+    transition: transform .3s;
+}
+
+.list__show {
+    width: 80%;
+    margin-left: auto;
+    border-left: 2px solid #000000;
+    list-style: none;
+    transition: height .4s;
+    height: 0;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+select {
+    width: 65%;
+    padding: 6px;
+    margin: 5px auto;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+/* Estilo para el mensaje de documento cuando se detectan puntos, slash o guiones */
+#documentoMessage {
+    font-size: 12px;
+    margin-top: 5px;
+    text-align: left;
+    color: #dc3545;
+    display: none; /* Ocultar el mensaje por defecto */
+}
+
+/* Estilo para reducir el margen superior del elemento Teléfono */
+#telefono {
+    margin-top: 0; /* Reducir el margen superior a 0 */
+}
+
+input[type="submit"] {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #1a751e;
+}
+
+/* Estilo para marcar los requisitos de contraseña completados */
+.completed {
+    color: #28a745 !important;
+}
+
+/* Estilo para las checklists */
+.checklist {
+    font-size: 12px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.invalid {
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border-radius: 10px; /* Redondear los bordes de la tabla */
+    overflow: hidden;
+}
+
+th, td {
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+
+.tabla-container {
+    max-height: 600px;
+    max-width: 600px;
+    overflow-y: auto;
+    overflow-x: scroll; 
+    border-radius: 16px
+}
+#tabla-usuarios tbody td {
+    font-size: 13px;
+}
+.rectangulo-usuariosregistrados {
+    width: 851px;
+    height: 500px;
+    background-color: white;
+    position: absolute;
+    top: 45%;
+    left: 62.2%;
+    transform: translate(-50%, -50%);
+    display: block;
+    z-index: 9999;
+    border-radius: 16px;
+    padding: 20px;
+    overflow: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+}
+
+
+.search-containerbaja {
+    position: absolute;
+    top: calc(19% + 210px + 40px); 
+    left: 10.8%; 
+    padding: 6px 20px; 
+    display: flex;
+    align-items: center; 
+    width: 55%; 
+}
+
+#searchInputbaja {
+    padding: 8px;
+    font-size: 13px;
+    margin-right: 10px;
+    font-family: Poppins;
+    width: 55%; 
+    border-radius: 6px;
+}
+
+#searchButtonbaja {
+    padding: 9px 20px;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: Poppins;
+}
+
+#tabla-usuarios {
+    min-width: 1500px; /* Establece el ancho mínimo de la tabla a 1000px */
+}
+#documentoMessage {
+    font-size: 12px;
+    margin-top: 5px;
+    text-align: left;
+    color: #dc3545;
+    display: none; /* Ocultar el mensaje por defecto */
+}
+
+/* Estilo para reducir el margen superior del elemento Teléfono */
+#telefono {
+    margin-top: 0; /* Reducir el margen superior a 0 */
+}
+
+input[type="submit"] {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-family: Poppins;
+}
+
+input[type="submit"]:hover {
+    background-color: #1a751e;
+}
+
+/* Estilo para marcar los requisitos de contraseña completados */
+.completed {
+    color: #28a745 !important;
+}
+
+/* Estilo para las checklists */
+.checklist {
+    font-size: 12px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.invalid {
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+}
+.formulario {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.columna-izquierda,
+.columna-derecha {
+    float: left;
+    width: 50%;
+    margin-bottom: 15px; 
+    text-align: left;
+}
+
+.columna-izquierda label,
+.columna-derecha label {
+    display: block;
+    text-align: left;
+    margin-bottom: 4px;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+input[type="submit"] {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #1a751e;
+}
+
+/* Estilo para marcar los requisitos de contraseña completados */
+.completed {
+    color: #28a745 !important;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border-radius: 4px; /* Redondear los bordes de la tabla */
+    overflow: hidden;
+}
+
+th, td {
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+
+.tabla-container {
+    max-height: 600px;
+    max-width: 600px;
+    overflow-y: auto;
+    overflow-x: scroll; 
+    border-radius: 16px
+}
+#tabla-usuarios tbody td {
+    font-size: 13px;
+}
+.rectangulo-bajausuarios {
+    width: 851px;
+    height: 350px; 
+    background-color: white;
+    position: absolute;
+    top: 32%;
+    left: 62.2%;
+    transform: translate(-50%, -50%);
+    display: block;
+    z-index: 9999;
+    overflow:auto;
+    padding: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+}
+
+.tabla-container {
+    max-height: 250px; 
+    max-width: 600px;
+    overflow-y: auto;
+    overflow-x: scroll; 
+    border-radius: 16px;
+}
+
+#tabla-usuarios tbody td {
+    font-size: 12px; /* Reducir el tamaño de fuente de las celdas de la tabla */
+}
+
+
+.search-container {
+    position: absolute;
+    top: calc(45% + 210px + 40px); 
+    left: 34%; 
+    padding: 6px 20px; 
+    display: flex;
+    align-items: center; 
+    width: 55%; 
+}
+
+#searchInput {
+    padding: 8px;
+    font-size: 13px;
+    margin-right: 10px;
+    font-family: Poppins;
+    width: 95%; 
+    border-radius: 6px;
+}
+
+#searchButton {
+    padding: 9px 20px;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: Poppins;
+}
+
+#tabla-usuarios {
+    min-width: 1800px; /* Establece el ancho mínimo de la tabla a 1000px */
+}
+.fila-seleccionada {
+    background-color: #83828289; /* Cambia el color de fondo de las filas seleccionadas */
+}
+.estado-container {
+    margin-top: -250px;
+}
+
+#estado {
+    height: 200px; 
+    width: 31.9%; 
+    max-width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    resize: vertical; 
+    margin-top: 2.5%;
+    margin-left: 765px; 
+    margin-right: 10px;
+    font-family: Poppins;
+}
+
+
+.registrar-button-container {
+    margin-top: 8px; 
+    margin-left: -186px; 
+}
+
+.fecha-proceso-container {
+    margin-top: -165px; 
+    margin-left: -186px; 
+}
+
+.green-button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Poppins;
+}
+
+.green-button:hover {
+    background-color: #218838;
+}
+
+#fechaproceso {
+    width: 25%;
+    padding: 5px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 13px;
+    font-family: Poppins;
+}
+
+label[for="fechaproceso"] {
+    text-align: left;
+    color: white;
+}
+
+.rectangulo-registrarusuarios {
+    width: 851px;
+    height: 550px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 62.2%;
+    transform: translate(-50%, -50%);
+    display: block;
+    overflow:auto;
+    z-index: 9999;
+    border-radius: 16px 16px 16px 16px;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-family: Poppins;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+select {
+    width: 80%;
+    padding: 6px;
+    margin: 5px auto;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+/* Estilo para el mensaje de documento cuando se detectan puntos, slash o guiones */
+#documentoMessage {
+    font-size: 12px;
+    margin-top: 5px;
+    text-align: left;
+    color: #dc3545;
+    display: none; /* Ocultar el mensaje por defecto */
+}
+
+/* Estilo para reducir el margen superior del elemento Teléfono */
+#telefono {
+    margin-top: 0; /* Reducir el margen superior a 0 */
+}
+
+input[type="submit"] {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-family: Poppins;
+}
+
+input[type="submit"]:hover {
+    background-color: #1a751e;
+}
+
+/* Estilo para marcar los requisitos de contraseña completados */
+.completed {
+    color: #28a745 !important;
+}
+
+/* Estilo para las checklists */
+.checklist {
+    font-size: 12px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.invalid {
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+}
+.formulario {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.columna-izquierda,
+.columna-derecha {
+    float: left;
+    width: 50%;
+    margin-bottom: 15px; 
+    text-align: left;
+}
+
+.columna-izquierda label,
+.columna-derecha label {
+    display: block;
+    text-align: left;
+    margin-bottom: 4px;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
